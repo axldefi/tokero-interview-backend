@@ -4,5 +4,27 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Tokero.Interview.Data\**" />
+    <Compile Remove="Tokero.Interview.Services\**" />
+    <Content Remove="Tokero.Interview.Data\**" />
+    <Content Remove="Tokero.Interview.Services\**" />
+    <EmbeddedResource Remove="Tokero.Interview.Data\**" />
+    <EmbeddedResource Remove="Tokero.Interview.Services\**" />
+    <None Remove="Tokero.Interview.Data\**" />
+    <None Remove="Tokero.Interview.Services\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.22" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.22" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.22" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="Tokero.Interview.Data\Tokero.Interview.Data.csproj" />
+    <ProjectReference Include="Tokero.Interview.Services\Tokero.Interview.Services.csproj" />
+  </ItemGroup>
+
 
 </Project>

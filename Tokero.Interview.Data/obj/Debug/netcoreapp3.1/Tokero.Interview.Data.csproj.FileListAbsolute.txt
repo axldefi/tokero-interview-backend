@@ -1,0 +1,10 @@
+C:\Users\ungur\source\repos\Tokero.Interview\Tokero.Interview.Data\bin\Debug\netcoreapp3.1\Tokero.Interview.Data.deps.json
+C:\Users\ungur\source\repos\Tokero.Interview\Tokero.Interview.Data\bin\Debug\netcoreapp3.1\Tokero.Interview.Data.dll
+C:\Users\ungur\source\repos\Tokero.Interview\Tokero.Interview.Data\bin\Debug\netcoreapp3.1\Tokero.Interview.Data.pdb
+C:\Users\ungur\source\repos\Tokero.Interview\Tokero.Interview.Data\obj\Debug\netcoreapp3.1\Tokero.Interview.Data.csproj.AssemblyReference.cache
+C:\Users\ungur\source\repos\Tokero.Interview\Tokero.Interview.Data\obj\Debug\netcoreapp3.1\Tokero.Interview.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ungur\source\repos\Tokero.Interview\Tokero.Interview.Data\obj\Debug\netcoreapp3.1\Tokero.Interview.Data.AssemblyInfoInputs.cache
+C:\Users\ungur\source\repos\Tokero.Interview\Tokero.Interview.Data\obj\Debug\netcoreapp3.1\Tokero.Interview.Data.AssemblyInfo.cs
+C:\Users\ungur\source\repos\Tokero.Interview\Tokero.Interview.Data\obj\Debug\netcoreapp3.1\Tokero.Interview.Data.csproj.CoreCompileInputs.cache
+C:\Users\ungur\source\repos\Tokero.Interview\Tokero.Interview.Data\obj\Debug\netcoreapp3.1\Tokero.Interview.Data.dll
+C:\Users\ungur\source\repos\Tokero.Interview\Tokero.Interview.Data\obj\Debug\netcoreapp3.1\Tokero.Interview.Data.pdb

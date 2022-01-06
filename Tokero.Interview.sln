@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32104.313
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tokero.Interview", "Tokero.Interview.csproj", "{FEFFD30C-BEC7-4EA6-9773-81EB82B3E5F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tokero.Interview", "Tokero.Interview.csproj", "{FEFFD30C-BEC7-4EA6-9773-81EB82B3E5F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tokero.Interview.Data", "Tokero.Interview.Data\Tokero.Interview.Data.csproj", "{1496C9B7-D905-4FFD-AF24-241642A87D95}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tokero.Interview.Services", "Tokero.Interview.Services\Tokero.Interview.Services.csproj", "{8006262A-B0CC-46B7-8C99-6C1F9142E2EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{FEFFD30C-BEC7-4EA6-9773-81EB82B3E5F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEFFD30C-BEC7-4EA6-9773-81EB82B3E5F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEFFD30C-BEC7-4EA6-9773-81EB82B3E5F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1496C9B7-D905-4FFD-AF24-241642A87D95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1496C9B7-D905-4FFD-AF24-241642A87D95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1496C9B7-D905-4FFD-AF24-241642A87D95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1496C9B7-D905-4FFD-AF24-241642A87D95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8006262A-B0CC-46B7-8C99-6C1F9142E2EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8006262A-B0CC-46B7-8C99-6C1F9142E2EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8006262A-B0CC-46B7-8C99-6C1F9142E2EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8006262A-B0CC-46B7-8C99-6C1F9142E2EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
