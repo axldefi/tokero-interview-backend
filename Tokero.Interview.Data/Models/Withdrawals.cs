@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace Tokero.Interview.Data.Models
@@ -10,6 +13,7 @@ namespace Tokero.Interview.Data.Models
         [Key]
         public int Id { get;set;}
         public int OperationId { get;set;}
+        [Column(TypeName = "decimal(18,2)")]
         public decimal Amount { get;set;}
         public bool WasApprovedByUser2FA { get;set;}
         public string ToAddress { get;set;}
