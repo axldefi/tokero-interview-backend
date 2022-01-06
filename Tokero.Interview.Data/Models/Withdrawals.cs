@@ -12,7 +12,9 @@ namespace Tokero.Interview.Data.Models
     {
         [Key]
         public int Id { get;set;}
+        [ForeignKey("Operations")]
         public int OperationId { get;set;}
+        public Operations Operations { get;set; }
         [Column(TypeName = "decimal(18,2)")]
         public decimal Amount { get;set;}
         public bool WasApprovedByUser2FA { get;set;}

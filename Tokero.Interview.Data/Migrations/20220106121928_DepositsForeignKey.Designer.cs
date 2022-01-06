@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Tokero.Interview.Data;
 
 namespace Tokero.Interview.Data.Migrations
 {
     [DbContext(typeof(OperationsDBContext))]
-    partial class OperationsDBContextModelSnapshot : ModelSnapshot
+    [Migration("20220106121928_DepositsForeignKey")]
+    partial class DepositsForeignKey
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
