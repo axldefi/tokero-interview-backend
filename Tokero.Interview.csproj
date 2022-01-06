@@ -32,5 +32,9 @@
     <ProjectReference Include="Tokero.Interview.Services\Tokero.Interview.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ResponseModels\" />
+  </ItemGroup>
+
 
 </Project>
