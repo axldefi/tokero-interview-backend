@@ -11,7 +11,9 @@ namespace Tokero.Interview.Data
     {
         [Key]
         public int Id { get;set;}
-        public int OperationId { get;set;}
+        [ForeignKey("Operations")]
+        public int OperationId { get; set; }
+        public Operations Operations { get; set; }
         [Column(TypeName = "decimal(18,2)")]
         public decimal Amount { get;set;}
         public string FromAddress { get;set;}

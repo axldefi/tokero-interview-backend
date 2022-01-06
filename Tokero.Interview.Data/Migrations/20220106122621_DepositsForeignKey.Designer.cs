@@ -9,7 +9,7 @@ using Tokero.Interview.Data;
 namespace Tokero.Interview.Data.Migrations
 {
     [DbContext(typeof(OperationsDBContext))]
-    [Migration("20220106121928_DepositsForeignKey")]
+    [Migration("20220106122621_DepositsForeignKey")]
     partial class DepositsForeignKey
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -37,6 +37,8 @@ namespace Tokero.Interview.Data.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("OperationId");
 
                     b.ToTable("Deposits");
                 });
@@ -71,6 +73,8 @@ namespace Tokero.Interview.Data.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("OperationTypeId");
 
                     b.ToTable("Operations");
                 });
@@ -139,6 +143,24 @@ namespace Tokero.Interview.Data.Migrations
                     b.HasIndex("OperationId");
 
                     b.ToTable("Withdrawals");
+                });
+
+            modelBuilder.Entity("Tokero.Interview.Data.Deposits", b =>
+                {
+                    b.HasOne("Tokero.Interview.Data.Models.Operations", "Operations")
+                        .WithMany()
+                        .HasForeignKey("OperationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Tokero.Interview.Data.Models.Operations", b =>
+                {
+                    b.HasOne("Tokero.Interview.Data.Models.OperationTypes", "OperationType")
+                        .WithMany()
+                        .HasForeignKey("OperationTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Tokero.Interview.Data.Models.TradeOrders", b =>

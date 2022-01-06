@@ -7,13 +7,13 @@ namespace Tokero.Interview.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateIndex(
-                name: "IX_Withdrawals_OperationId",
-                table: "Withdrawals",
+                name: "IX_Deposits_OperationId",
+                table: "Deposits",
                 column: "OperationId");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_Withdrawals_Operations_OperationId",
-                table: "Withdrawals",
+                name: "FK_Deposits_Operations_OperationId",
+                table: "Deposits",
                 column: "OperationId",
                 principalTable: "Operations",
                 principalColumn: "Id",
@@ -23,12 +23,12 @@ namespace Tokero.Interview.Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_Withdrawals_Operations_OperationId",
-                table: "Withdrawals");
+                name: "FK_Deposits_Operations_OperationId",
+                table: "Deposits");
 
             migrationBuilder.DropIndex(
-                name: "IX_Withdrawals_OperationId",
-                table: "Withdrawals");
+                name: "IX_Deposits_OperationId",
+                table: "Deposits");
         }
     }
 }

@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Tokero.Interview.Data;
 
 namespace Tokero.Interview.Data.Migrations
 {
     [DbContext(typeof(OperationsDBContext))]
-    partial class OperationsDBContextModelSnapshot : ModelSnapshot
+    [Migration("20220106122305_OperationsForeignKey")]
+    partial class OperationsForeignKey
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,8 +37,6 @@ namespace Tokero.Interview.Data.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("OperationId");
 
                     b.ToTable("Deposits");
                 });
@@ -141,15 +141,6 @@ namespace Tokero.Interview.Data.Migrations
                     b.HasIndex("OperationId");
 
                     b.ToTable("Withdrawals");
-                });
-
-            modelBuilder.Entity("Tokero.Interview.Data.Deposits", b =>
-                {
-                    b.HasOne("Tokero.Interview.Data.Models.Operations", "Operations")
-                        .WithMany()
-                        .HasForeignKey("OperationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Tokero.Interview.Data.Models.Operations", b =>
