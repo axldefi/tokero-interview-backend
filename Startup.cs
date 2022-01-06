@@ -49,6 +49,10 @@ namespace Tokero.Interview
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Tokero interview"));
             }
+            app.UseCors(x => x
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
 
             if (env.IsDevelopment())
             {

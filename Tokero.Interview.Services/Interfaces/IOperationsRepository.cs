@@ -9,8 +9,8 @@ namespace Tokero.Interview.Services.Interfaces
     public interface IOperationsRepository
     {
         List<OperationTypes> OperationTypesGetAll();
-        List<TradeOrders> TradeOrdersGetAll(int pageNumber, int pageSize);
-        List<Withdrawals> WithdrawalsGetAll(int pageNumber, int pageSize);
-        List<Deposits> DepositsGetAll(int pageNumber, int pageSize);
+        List<TradeOrders> TradeOrdersGetAll(int curPage, int pageNumber, int pageSize);
+        List<Withdrawals> WithdrawalsGetAll(int curPage, int pageNumber, int pageSize);
+        List<Deposits> DepositsGetAll(int curPage, int pageNumber, int pageSize);
     }
 }

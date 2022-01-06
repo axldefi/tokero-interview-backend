@@ -34,12 +34,12 @@ namespace Tokero.Interview.Controllers
         }
 
         [HttpGet]
-        [Route("get-all-by-type")]
-        public IActionResult GetAllTradeOrders(int pageNumber, int pageSize)
+        [Route("trade-orders")]
+        public IActionResult GetAllTradeOrders(int curPage,int pageNumber, int pageSize)
         {
             try
             {
-                var response = _operationsRepository.TradeOrdersGetAll(pageNumber, pageSize);
+                var response = _operationsRepository.TradeOrdersGetAll(curPage, pageNumber, pageSize);
                 return Ok(response);
             }
             catch (Exception ex)
@@ -50,11 +50,11 @@ namespace Tokero.Interview.Controllers
 
         [HttpGet]
         [Route("deposits")]
-        public IActionResult GetAllDeposits(int pageNumber, int pageSize)
+        public IActionResult GetAllDeposits(int curPage, int pageNumber, int pageSize)
         {
             try
             {
-                var response = _operationsRepository.DepositsGetAll(pageNumber, pageSize);
+                var response = _operationsRepository.DepositsGetAll(curPage,pageNumber, pageSize);
                 return Ok(response);
             }
             catch (Exception ex)
@@ -65,11 +65,11 @@ namespace Tokero.Interview.Controllers
 
         [HttpGet]
         [Route("withdrawals")]
-        public IActionResult GetAllWithdrawals(int pageNumber, int pageSize)
+        public IActionResult GetAllWithdrawals(int curPage, int pageNumber, int pageSize)
         {
             try
             {
-                var response = _operationsRepository.WithdrawalsGetAll(pageNumber, pageSize);
+                var response = _operationsRepository.WithdrawalsGetAll(curPage, pageNumber, pageSize);
                 return Ok(response);
             }
             catch (Exception ex)

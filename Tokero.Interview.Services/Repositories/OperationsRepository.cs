@@ -22,18 +22,19 @@ namespace Tokero.Interview.Services.Repositories
             return _dbContext.OperationTypes.ToList();
         }
 
-        public List<TradeOrders> TradeOrdersGetAll(int pageNumber, int pageSize)
+        public List<TradeOrders> TradeOrdersGetAll(int curPage, int pageNumber, int pageSize)
         {
-            return _dbContext.TradeOrders.ToList();
+
+            return _dbContext.TradeOrders.Skip(pageSize * (curPage - 1)).Take(pageSize).ToList();
         }
-        public List<Deposits> DepositsGetAll(int pageNumber, int pageSize)
+        public List<Deposits> DepositsGetAll(int curPage, int pageNumber, int pageSize)
         {
-            return _dbContext.Deposits.ToList();
+            return _dbContext.Deposits.Skip(pageSize * (curPage - 1)).Take(pageSize).ToList();
         }
 
-        public List<Withdrawals> WithdrawalsGetAll(int pageNumber, int pageSize)
+        public List<Withdrawals> WithdrawalsGetAll(int curPage, int pageNumber, int pageSize)
         {
-            return _dbContext.Withdrawals.ToList();
+            return _dbContext.Withdrawals.Skip(pageSize * (curPage - 1)).Take(pageSize).ToList();
         }
     }
 }
