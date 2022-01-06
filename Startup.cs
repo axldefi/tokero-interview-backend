@@ -7,11 +7,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Tokero.Interview.Data;
+using Tokero.Interview.Services.Interfaces;
+using Tokero.Interview.Services.Repositories;
 
 namespace Tokero.Interview
 {
@@ -29,12 +32,24 @@ namespace Tokero.Interview
         {
             services.AddControllers();
             services.AddDbContext<OperationsDBContext>(option => option.UseSqlServer(Configuration.GetConnectionString("OperationsDB")));
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "TokeroInterview", Version = "v1" });
+            });
+            services.AddScoped<IOperationsRepository, OperationsRepository>();
 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Tokero interview"));
+            }
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
