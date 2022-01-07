@@ -34,43 +34,31 @@ namespace Tokero.Interview.Controllers
         }
 
         [HttpGet]
-        [Route("trade-orders")]
-        public IActionResult GetAllTradeOrders(int curPage,int pageNumber, int pageSize)
+        [Route("table-data")]
+        public IActionResult GetTableData(int type, int curPage, int pageNumber, int pageSize)
         {
+            
+            curPage = 1;
+            pageNumber = 1;
+            pageSize = 5;
             try
             {
-                var response = _operationsRepository.TradeOrdersGetAll(curPage, pageNumber, pageSize);
-                return Ok(response);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
-
-        [HttpGet]
-        [Route("deposits")]
-        public IActionResult GetAllDeposits(int curPage, int pageNumber, int pageSize)
-        {
-            try
-            {
-                var response = _operationsRepository.DepositsGetAll(curPage,pageNumber, pageSize);
-                return Ok(response);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
-
-        [HttpGet]
-        [Route("withdrawals")]
-        public IActionResult GetAllWithdrawals(int curPage, int pageNumber, int pageSize)
-        {
-            try
-            {
-                var response = _operationsRepository.WithdrawalsGetAll(curPage, pageNumber, pageSize);
-                return Ok(response);
+                if (type == 1)
+                {
+                    var response = _operationsRepository.DepositsGetAll(curPage, pageNumber, pageSize);
+                    return Ok(response);
+                }
+                if(type == 2)
+                {
+                    var response = _operationsRepository.WithdrawalsGetAll(curPage, pageNumber, pageSize);
+                    return Ok(response);
+                }
+                if(type == 3)
+                {
+                    var response = _operationsRepository.TradeOrdersGetAll(curPage, pageNumber, pageSize);
+                    return Ok(response);
+                }
+                return BadRequest();
             }
             catch (Exception ex)
             {
